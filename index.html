@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
+<<<<<<< HEAD
     --bg: #0b0c10;
     --surface: #14161d;
     --surface2: #1e222b;
@@ -88,6 +89,381 @@
   footer span { color: var(--accent); }
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   .hero-content > * { animation: fadeUp 0.6s ease forwards; opacity:0; }
+=======
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --accent: #3b82f6;
+    --accent2: #06b6d4;
+    --accent3: #8b5cf6;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: rgba(59,130,246,0.15);
+    --glow: 0 0 40px rgba(59,130,246,0.15);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top:0; width:100%; z-index:100;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .nav-links { display:flex; gap:2rem; list-style:none; }
+  .nav-links a {
+    color: var(--muted); text-decoration:none;
+    font-size: 0.85rem; letter-spacing:0.05em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 80px 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset:0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(6,182,212,0.06) 0%, transparent 50%);
+  }
+  .grid-bg {
+    position: absolute; inset:0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+  .hero-content { position:relative; text-align:center; max-width:700px; }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .hero-name {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #f1f5f9 0%, var(--accent) 50%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+  .hero-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-meta {
+    display: flex; gap:2rem; justify-content:center; flex-wrap:wrap;
+    margin-bottom: 2.5rem;
+  }
+  .hero-meta span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .hero-meta span strong { color: var(--accent2); }
+  .sdg-badge {
+    display: inline-flex; align-items:center; gap:0.5rem;
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.15));
+    border: 1px solid rgba(59,130,246,0.3);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  .sdg-dot { width:8px; height:8px; border-radius:50%; background: var(--accent); }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-header { margin-bottom: 3rem; }
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--text);
+  }
+  .divider {
+    width: 40px; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    margin-top: 0.8rem;
+  }
+
+  /* CARDS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow);
+    border-color: rgba(59,130,246,0.3);
+  }
+  .card-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items:center; justify-content:space-between;
+  }
+  .card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .card-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .card-body { padding: 1.5rem; }
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background: var(--surface2);
+  }
+  .video-wrap iframe {
+    position: absolute; top:0; left:0;
+    width:100%; height:100%;
+    border:0;
+  }
+  .reflection-box {
+    background: var(--surface2);
+    border-left: 2px solid var(--accent);
+    padding: 0.8rem 1rem;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+  .btn {
+    display: inline-flex; align-items:center; gap:0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .btn-outline:hover { background: rgba(59,130,246,0.1); }
+
+  /* PROJECT CARDS */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s;
+  }
+  .project-card:hover { box-shadow: var(--glow); }
+  .project-card-header {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+  }
+  .project-card-body {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media(max-width:640px) {
+    .project-card-body { grid-template-columns: 1fr; }
+  }
+  .project-meta { display:flex; flex-direction:column; gap:1rem; }
+  .meta-row { display:flex; flex-direction:column; gap:0.3rem; }
+  .meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .meta-value { font-size: 0.9rem; color: var(--text); line-height:1.5; }
+  .tech-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem; }
+  .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 2px;
+    color: var(--accent2);
+  }
+
+  /* REFLECTION */
+  .reflection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .reflection-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .reflection-item h3 {
+    font-size: 0.9rem;
+    color: var(--accent2);
+    margin-bottom: 0.8rem;
+    font-family: 'Space Mono', monospace;
+  }
+  .reflection-item p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: flex; flex-wrap:wrap; gap:0.8rem;
+  }
+  .skill-pill {
+    display: inline-flex; align-items:center; gap:0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--text);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
+  .skill-dot { width:6px; height:6px; border-radius:50%; }
+
+  /* RESOURCES */
+  .resource-list { display:flex; flex-direction:column; gap:1rem; }
+  .resource-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    display: flex; align-items:flex-start; gap:1rem;
+  }
+  .resource-icon {
+    width: 32px; height:32px;
+    background: rgba(59,130,246,0.1);
+    border-radius: 4px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+  }
+  .resource-text h4 { font-size:0.9rem; margin-bottom:0.2rem; }
+  .resource-text p { font-size:0.8rem; color:var(--muted); line-height:1.5; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+  footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  footer span { color: var(--accent); }
+
+  /* RESPONSIVE NAV */
+  @media(max-width:640px) {
+    .nav-links { display:none; }
+    .hero-meta { gap:1rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.6s ease forwards;
+    opacity:0;
+  }
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
   .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
   .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
   .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
@@ -96,8 +472,15 @@
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 <nav>
   <div class="nav-logo">A207404</div>
+=======
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">A207404 // PORTFOLIO</div>
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#labs">Labs</a></li>
@@ -108,13 +491,23 @@
   </ul>
 </nav>
 
+<<<<<<< HEAD
+=======
+<!-- HERO -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="home" style="max-width:100%;padding:0;">
   <div class="hero-bg"></div>
   <div class="grid-bg"></div>
   <div class="hero-content">
     <div class="hero-tag">Mobile Application Programming</div>
     <h1 class="hero-name">ZHANG KAIYI</h1>
+<<<<<<< HEAD
     <p class="hero-sub">A mobile developer passionate about building meaningful apps that contribute to education and lifelong learning through modern Android technologies.</p>
+=======
+    <p class="hero-sub">
+      A mobile developer passionate about building meaningful apps that contribute to education and lifelong learning through modern Android technologies.
+    </p>
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
     <div class="hero-meta">
       <span><strong>Matric</strong> A207404</span>
       <span><strong>Programme</strong> Mobile Application Programming</span>
@@ -127,6 +520,10 @@
   </div>
 </section>
 
+<<<<<<< HEAD
+=======
+<!-- LABS -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="labs" style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
   <div class="section-header">
     <div class="section-tag">// 01</div>
@@ -134,6 +531,7 @@
     <div class="divider"></div>
   </div>
   <div class="cards-grid">
+<<<<<<< HEAD
     <div class="card">
       <div class="card-header"><span class="card-label">Lab 01</span><span class="card-num">UI Design</span></div>
       <div class="card-body">
@@ -177,12 +575,109 @@
   </div>
 </section>
 
+=======
+
+    <!-- Lab 1 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Lab 01</span>
+        <span class="card-num">UI Design</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Static UI Layout</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/0_qGG-9xhS4" allowfullscreen></iframe>
+        </div>
+        <div class="reflection-box">
+          In Lab 1, I built my first static UI using Jetpack Compose. I learned how to use basic composables like Column, Row, and Text to structure a layout. This lab gave me a solid foundation for thinking in terms of composable components.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab 2 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Lab 02</span>
+        <span class="card-num">Interaction</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">State & Interaction</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/efptMjtFKE0" allowfullscreen></iframe>
+        </div>
+        <div class="reflection-box">
+          Lab 2 introduced me to state management using mutableStateOf and remember. I added interactivity to the UI, learning how user input triggers recomposition and how Compose reacts to state changes automatically.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab 3 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Lab 03</span>
+        <span class="card-num">Material Design</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Material Design 3</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/oi6mXVmL-DI" allowfullscreen></iframe>
+        </div>
+        <div class="reflection-box">
+          In Lab 3, I applied Material Design 3 principles using Compose's built-in components such as Card, Button, and MaterialTheme. I learned how to create a consistent and professional visual identity across the app.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab 4 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Lab 04</span>
+        <span class="card-num">Navigation</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Navigation & ViewModel</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Z5fk8zRjtmk" allowfullscreen></iframe>
+        </div>
+        <div class="reflection-box">
+          Lab 4 taught me multi-screen navigation using Navigation Compose and how to share state across screens with ViewModel. I implemented a user profile form that persists data throughout the app's navigation flow.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab 5 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Lab 05</span>
+        <span class="card-num">Room Database</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Local Persistence with Room</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/uHeCKrcthuo" allowfullscreen></iframe>
+        </div>
+        <div class="reflection-box">
+          Lab 5 introduced Room Database for persistent local storage. I learned the Entity-DAO-Repository-ViewModel architecture and how Flow enables automatic UI updates when the database changes, making data survive app restarts.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="projects" style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
   <div class="section-header">
     <div class="section-tag">// 02</div>
     <h2 class="section-title">Project Submissions</h2>
     <div class="divider"></div>
   </div>
+<<<<<<< HEAD
+=======
+
+  <!-- Project 1 -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
   <div class="project-card">
     <div class="project-card-header">
       <div>
@@ -190,7 +685,14 @@
         <h3 style="font-size:1.2rem;">IELTS Master</h3>
       </div>
       <div class="tech-tags">
+<<<<<<< HEAD
         <span class="tech-tag">Compose</span><span class="tech-tag">Navigation</span><span class="tech-tag">ViewModel</span><span class="tech-tag">SDG 4</span>
+=======
+        <span class="tech-tag">Compose</span>
+        <span class="tech-tag">Navigation</span>
+        <span class="tech-tag">ViewModel</span>
+        <span class="tech-tag">SDG 4</span>
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
       </div>
     </div>
     <div class="project-card-body">
@@ -209,10 +711,21 @@
         </div>
       </div>
       <div>
+<<<<<<< HEAD
         <div class="video-wrap"><iframe src="https://www.youtube.com/embed/eF1KXfvtHNI" allowfullscreen></iframe></div>
       </div>
     </div>
   </div>
+=======
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/eF1KXfvtHNI" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
   <div class="project-card">
     <div class="project-card-header">
       <div>
@@ -220,7 +733,15 @@
         <h3 style="font-size:1.2rem;">IELTS Master — Advanced</h3>
       </div>
       <div class="tech-tags">
+<<<<<<< HEAD
         <span class="tech-tag">Room</span><span class="tech-tag">Firebase</span><span class="tech-tag">Retrofit</span><span class="tech-tag">Sensor</span><span class="tech-tag">SDG 4</span>
+=======
+        <span class="tech-tag">Room</span>
+        <span class="tech-tag">Firebase</span>
+        <span class="tech-tag">Retrofit</span>
+        <span class="tech-tag">Sensor</span>
+        <span class="tech-tag">SDG 4</span>
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
       </div>
     </div>
     <div class="project-card-body">
@@ -239,12 +760,25 @@
         </div>
       </div>
       <div>
+<<<<<<< HEAD
         <div style="background:var(--surface2);border-radius:4px;height:200px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.75rem;border:1px dashed var(--border);">VIDEO COMING SOON</div>
       </div>
     </div>
   </div>
 </section>
 
+=======
+        <div style="background:var(--surface2);border-radius:4px;height:200px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.75rem;border:1px dashed var(--border);">
+          VIDEO COMING SOON
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- REFLECTION -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="reflection" style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
   <div class="section-header">
     <div class="section-tag">// 03</div>
@@ -252,6 +786,7 @@
     <div class="divider"></div>
   </div>
   <div class="reflection-grid">
+<<<<<<< HEAD
     <div class="reflection-item"><h3>Growth</h3><p>Starting from a static UI in Lab 1, I gradually built up to a fully connected app with cloud storage, live APIs, and hardware sensors. Each lab built on the previous, making the learning curve manageable and rewarding.</p></div>
     <div class="reflection-item"><h3>Challenges</h3><p>The biggest challenge was integrating Room with KSP in a project using AGP 9.x. Version compatibility issues took significant time to resolve, but taught me the importance of understanding the full dependency chain.</p></div>
     <div class="reflection-item"><h3>SDG Impact</h3><p>Building an IELTS learning app directly supports SDG 4 by making quality English vocabulary learning accessible on any mobile device. The community sharing feature extends this impact by enabling learners to share resources with each other.</p></div>
@@ -259,6 +794,28 @@
   </div>
 </section>
 
+=======
+    <div class="reflection-item">
+      <h3>Growth</h3>
+      <p>Starting from a static UI in Lab 1, I gradually built up to a fully connected app with cloud storage, live APIs, and hardware sensors. Each lab built on the previous, making the learning curve manageable and rewarding.</p>
+    </div>
+    <div class="reflection-item">
+      <h3>Challenges</h3>
+      <p>The biggest challenge was integrating Room with KSP in a project using AGP 9.x. Version compatibility issues took significant time to resolve, but taught me the importance of understanding the full dependency chain.</p>
+    </div>
+    <div class="reflection-item">
+      <h3>SDG Impact</h3>
+      <p>Building an IELTS learning app directly supports SDG 4 by making quality English vocabulary learning accessible on any mobile device. The community sharing feature extends this impact by enabling learners to share resources with each other.</p>
+    </div>
+    <div class="reflection-item">
+      <h3>Going Forward</h3>
+      <p>This course has given me the foundation to build production-ready Android apps. I now understand the full stack from UI design to data persistence and external integrations, skills I plan to apply in real-world projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="skills" style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
   <div class="section-header">
     <div class="section-tag">// 04</div>
@@ -266,6 +823,7 @@
     <div class="divider"></div>
   </div>
   <div class="skills-grid">
+<<<<<<< HEAD
     <div class="skill-pill"><span class="skill-dot" style="background:#00D2BE;"></span>Kotlin</div>
     <div class="skill-pill"><span class="skill-dot" style="background:#00D2BE;"></span>Jetpack Compose</div>
     <div class="skill-pill"><span class="skill-dot" style="background:#a3aab5;"></span>Room Database</div>
@@ -281,6 +839,24 @@
   </div>
 </section>
 
+=======
+    <div class="skill-pill"><span class="skill-dot" style="background:#3b82f6;"></span>Kotlin</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#06b6d4;"></span>Jetpack Compose</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#8b5cf6;"></span>Room Database</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#f59e0b;"></span>Firebase Firestore</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#10b981;"></span>Retrofit</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#ef4444;"></span>Accelerometer Sensor</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#3b82f6;"></span>Navigation Compose</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#06b6d4;"></span>ViewModel</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#8b5cf6;"></span>Material Design 3</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#f59e0b;"></span>MVVM Architecture</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#10b981;"></span>KSP</div>
+    <div class="skill-pill"><span class="skill-dot" style="background:#ef4444;"></span>Git & GitHub</div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
 <section id="resources" style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
   <div class="section-header">
     <div class="section-tag">// 05</div>
@@ -288,6 +864,7 @@
     <div class="divider"></div>
   </div>
   <div class="resource-list">
+<<<<<<< HEAD
     <div class="resource-item"><div class="resource-icon">API</div><div class="resource-text"><h4>Dictionary API — dictionaryapi.dev</h4><p>Free public REST API used in Project 2 to fetch live word definitions and examples for the Self-Test screen.</p></div></div>
     <div class="resource-item"><div class="resource-icon">DB</div><div class="resource-text"><h4>Firebase Firestore — firebase.google.com</h4><p>Cloud NoSQL database used for community wordbook sharing. Enables real-time data synchronisation across users.</p></div></div>
     <div class="resource-item"><div class="resource-icon">LIB</div><div class="resource-text"><h4>Android Jetpack Libraries</h4><p>Room, Navigation Compose, ViewModel, and Lifecycle libraries from Android Jetpack formed the core architecture of both projects.</p></div></div>
@@ -300,3 +877,43 @@
 </footer>
 </body>
 </html>
+=======
+    <div class="resource-item">
+      <div class="resource-icon">API</div>
+      <div class="resource-text">
+        <h4>Dictionary API — dictionaryapi.dev</h4>
+        <p>Free public REST API used in Project 2 to fetch live word definitions and examples for the Self-Test screen.</p>
+      </div>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">DB</div>
+      <div class="resource-text">
+        <h4>Firebase Firestore — firebase.google.com</h4>
+        <p>Cloud NoSQL database used for community wordbook sharing. Enables real-time data synchronisation across users.</p>
+      </div>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">LIB</div>
+      <div class="resource-text">
+        <h4>Android Jetpack Libraries</h4>
+        <p>Room, Navigation Compose, ViewModel, and Lifecycle libraries from Android Jetpack formed the core architecture of both projects.</p>
+      </div>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">AI</div>
+      <div class="resource-text">
+        <h4>AI Assistance — Claude (Anthropic)</h4>
+        <p>Claude was used as a learning and debugging assistant throughout the course. All code was reviewed, understood, and modified by the student. AI assistance is acknowledged in accordance with course guidelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>ZHANG KAIYI &nbsp;·&nbsp; <span>A207404</span> &nbsp;·&nbsp; Mobile Application Programming &nbsp;·&nbsp; <span>2025</span></p>
+</footer>
+
+</body>
+</html>
+>>>>>>> 3d61c25fc0d7450b962c81646ea3b1f4d85cc78e
